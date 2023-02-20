@@ -2,6 +2,7 @@
 @import "fonts"; //шрифты
 @import "reset";
 @import "global"; //глобальные стили reset.css, например
+@import "libs";
 
 .header {
   padding: 40px 0;
@@ -38,6 +39,7 @@
     }
     &:hover {
       color: $accent;
+      text-shadow: 0 0 0.65px $accent, 0 0 0.65px $accent;
       transition-duration: 0.5s;
     }
     &:hover::before {
@@ -75,6 +77,78 @@
     color: #fff;
     text-align: center;
     line-height: 20px;
+  }
+}
+
+.top-slider {
+  background-image: url('../images/top-slider-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $bg;
+  padding: 65px 0 45px;
+  &__container {
+    max-width: 1560px;
+  }
+  &__content {
+    padding-left: 175px;
+    padding-top: 125px;
+  }
+  &__item {
+    display: flex !important;
+    justify-content: space-between;
+  }
+  &__title {
+    max-width: 670px;
+    font-size: 58px;
+    line-height: 68px;
+    color: $title;
+    @extend %roboto-700;
+    margin-bottom: 35px;
+  }
+  &__text {
+    max-width: 470px;
+    margin-bottom: 55px;
+  }
+  &__link {
+    @extend %btn;
+    padding: 14px 35px;
+  }
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: -70px;
+    li {
+      padding: 0 5px;
+      button {
+        padding: 0;
+        font-size: 0;
+        width: 27px;
+        height: 27px;
+        background-color: transparent;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        position: relative;
+        &::before{
+          content: '';
+          position: absolute;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: $default;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      &.slick-active {
+        button{
+          border-color: $accent;
+          &::before{
+            background-color: $accent;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -150,27 +224,20 @@ footer {
     }
   }
   &__form-button {
-    cursor: pointer;
-    border: none;
-    background-color: $accent;
-    color: #fff;
-    text-transform: uppercase;
-    padding: 12px 25px;
-    @extend %roboto-400;
-    box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
+    @extend %btn;
   }
 }
-.footer-bottom{
+.footer-bottom {
   height: 75px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 12px;
-  &__accept{
+  &__accept {
     display: flex;
     align-items: center;
   }
-  &__accept-img{
+  &__accept-img {
     display: inline-block;
     margin-left: 25px;
   }
