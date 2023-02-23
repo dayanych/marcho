@@ -6,6 +6,7 @@
 
 .header {
   padding: 40px 0;
+
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -17,14 +18,17 @@
   &__list {
     display: flex;
   }
-  &__list-item + .menu__list-item {
+
+  &__list-item+.menu__list-item {
     margin-left: 35px;
   }
+
   &__list-link {
     padding-bottom: 5px;
     color: $title;
     position: relative;
     @extend %roboto-400;
+
     &::before {
       content: "";
       position: absolute;
@@ -37,19 +41,23 @@
       transition-property: left, right;
       transition-duration: 0.3s;
     }
+
     &:hover {
       color: $accent;
       text-shadow: 0 0 0.65px $accent, 0 0 0.65px $accent;
       transition-duration: 0.5s;
     }
+
     &:hover::before {
       left: -3px;
       right: -3px;
     }
   }
+
   &__list-link--active {
     color: $accent;
     @extend %roboto-700;
+
     &::before {
       left: -3px;
       right: -3px;
@@ -59,12 +67,15 @@
 
 .user-nav {
   display: flex;
+
   &__link {
     position: relative;
   }
-  &__link + .user-nav__link {
+
+  &__link+.user-nav__link {
     margin-left: 25px;
   }
+
   &__num {
     position: absolute;
     width: 20px;
@@ -86,17 +97,21 @@
   background-size: contain;
   background-color: $bg;
   padding: 65px 0 45px;
+
   &__container {
     max-width: 1560px;
   }
+
   &__content {
     padding-left: 175px;
     padding-top: 125px;
   }
+
   &__item {
     display: flex !important;
     justify-content: space-between;
   }
+
   &__title {
     max-width: 670px;
     font-size: 58px;
@@ -105,20 +120,25 @@
     @extend %roboto-700;
     margin-bottom: 35px;
   }
+
   &__text {
     max-width: 470px;
     margin-bottom: 55px;
   }
+
   &__link {
     @extend %btn;
     padding: 14px 35px;
   }
+
   .slick-dots {
     display: flex;
     justify-content: center;
     margin-top: -70px;
+
     li {
       padding: 0 5px;
+
       button {
         padding: 0;
         font-size: 0;
@@ -128,6 +148,7 @@
         border: 1px solid transparent;
         border-radius: 50%;
         position: relative;
+
         &::before {
           content: "";
           position: absolute;
@@ -140,9 +161,11 @@
           transform: translate(-50%, -50%);
         }
       }
+
       &.slick-active {
         button {
           border-color: $accent;
+
           &::before {
             background-color: $accent;
           }
@@ -157,24 +180,28 @@
   background-image: url(../images/decor/categories-left-bg.png);
   background-repeat: no-repeat;
   background-position: center left;
+
   &__inner {
     background-image: url(../images/decor/categories-right-bg.png);
     background-repeat: no-repeat;
     background-position: center right;
   }
 }
+
 .info {
   display: flex;
   justify-content: space-between;
   background-color: #fff;
   margin-bottom: 110px;
   position: relative;
+
   &::before,
   &::after {
     content: "";
     position: absolute;
     z-index: -1;
   }
+
   &::before {
     top: -40px;
     left: -45px;
@@ -182,19 +209,22 @@
     width: 120px;
     height: 121px;
   }
+
   &::after {
     right: -23px;
     bottom: -23px;
     background-image: url(../images/decor/info-bottom-bg.svg);
     width: 65px;
     height: 52px;
-    
+
   }
+
   &__item {
     width: 370px;
     padding: 60px 30px;
     box-shadow: 20px 0px 60px 0px rgba(202, 202, 202, 0.35);
   }
+
   &__item-title {
     margin: 35px 0 10px;
     color: $title;
@@ -202,6 +232,7 @@
     @extend %roboto-400;
   }
 }
+
 .categories {
   &__items {
     display: grid;
@@ -210,64 +241,81 @@
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 30px;
   }
+
   &__item {
     padding-top: 35px;
     padding-left: 40px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+
     &:nth-child(1) {
+
       .categories__item-subtitle,
       .categories__link:hover {
         color: #620fe5;
       }
-      .categories__link:hover{
+
+      .categories__link:hover {
         border-bottom: 1px solid #620fe5;
       }
+
       grid-row: span 2;
     }
+
     &:nth-child(2) {
       grid-column: span 2;
       display: flex;
       flex-direction: column;
       justify-content: center;
       padding-top: 0;
+
       .categories__item-subtitle,
       .categories__link:hover {
         color: #fa556b;
       }
-      .categories__link:hover{
+
+      .categories__link:hover {
         border-bottom: 1px solid #fa556b;
         width: 117px;
       }
     }
+
     &:nth-child(3) {
+
       .categories__item-subtitle,
       .categories__link:hover {
         color: #ffb534;
       }
-      .categories__link:hover{
+
+      .categories__link:hover {
         border-bottom: 1px solid #ffb534;
       }
     }
+
     &:nth-child(4) {
+
       .categories__item-subtitle,
       .categories__link:hover {
         color: #4dc8fc;
       }
-      .categories__link:hover{
+
+      .categories__link:hover {
         border-bottom: 1px solid #4dc8fc;
       }
     }
   }
+
   &__item-subtitle {
     margin-bottom: 5px;
   }
+
   &__item-title {
     font-size: 22px;
     color: $title;
     margin-bottom: 16px;
   }
+
   &__link {
     text-transform: uppercase;
     color: $title;
@@ -276,52 +324,106 @@
   }
 }
 
+.video-fashion{
+  background-color: $bg;
+  background-image: url(../images/decor/video-pattern.svg);
+  background-size: cover;
+  background-position: top center;
+  padding: 125px 0;
+  &__inner{
+    display: flex;
+  }
+  &__popup{
+    margin-right: 60px;
+    max-width: 530px;
+    width: 100%;
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  &__content{
+    max-width: 570px;
+  }
+  &__subtitle{
+    padding-top: 25px;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: $accent;
+    margin-bottom: 5px;
+  }
+  &__title{
+    text-align: left;
+    
+  }
+  &__text{
+    margin-bottom: 55px;
+  }
+  &__link{
+    @extend %btn
+  }
+}
+
 footer {
   background-color: $bg;
 }
+
 .footer-top {
   padding: 70px 0 40px;
   border-bottom: 1px solid #ececec;
   display: flex;
+
   &__logo {
     display: block;
     margin-bottom: 33px;
   }
+
   &__adress,
   &__phone,
   &__email {
     line-height: 36px;
     display: block;
   }
+
   &__social-list {
     display: flex;
     margin-top: 30px;
     align-items: center;
   }
-  &__social-item + &__social-item {
+
+  &__social-item+&__social-item {
     margin-left: 18px;
   }
+
   &__social-link {
     path {
       fill: $default;
     }
+
     &:hover {
       path {
         fill: $accent;
       }
     }
   }
+
   &__contact {
     width: 250px;
     margin-right: 50px;
   }
+
   &__nav {
     width: 170px;
     margin-right: 30px;
   }
+
   &__item-form {
     max-width: 470px;
   }
+
   &__title {
     margin-bottom: 40px;
     color: $title;
@@ -329,12 +431,15 @@ footer {
     line-height: 100%;
     font-size: 22px;
   }
+
   &__link {
     line-height: 36px;
   }
+
   &__text {
     margin-bottom: 25px;
   }
+
   &__form-input {
     background-color: #fff;
     max-width: 320px;
@@ -342,25 +447,30 @@ footer {
     border: none;
     padding: 12px 10px 12px 15px;
     box-shadow: 0px 7px 20px 0px rgba(192, 192, 192, 0.3);
+
     &::placeholder {
       color: $default;
       font-size: 16px;
     }
   }
+
   &__form-button {
     @extend %btn;
   }
 }
+
 .footer-bottom {
   height: 75px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 12px;
+
   &__accept {
     display: flex;
     align-items: center;
   }
+
   &__accept-img {
     display: inline-block;
     margin-left: 25px;
@@ -368,4 +478,3 @@ footer {
 }
 
 @import "media"; //медиа-запросы
-  
