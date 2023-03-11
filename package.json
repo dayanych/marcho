@@ -14,7 +14,9 @@
     "gulp": "^4.0.2",
     "gulp-image": "^6.3.1",
     "gulp-sass": "^5.1.0",
+    "ion-rangeslider": "^2.3.1",
     "jquery": "^3.6.3",
+    "jquery-form-styler": "^2.0.2",
     "sass": "^1.58.1",
     "slick-carousel": "^1.8.1"
   },

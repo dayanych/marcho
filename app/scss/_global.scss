@@ -12,7 +12,7 @@ body {
   flex-direction: column;
 }
 
-.header--404-page{
+.header--404-page {
   background-color: $bg;
 }
 
@@ -54,12 +54,12 @@ a {
   margin: 0 auto 55px;
 }
 
-.breadcrumbs{
+.breadcrumbs {
   display: inline-flex;
   justify-content: center;
   padding-left: 25px;
   position: relative;
-  &::before{
+  &::before {
     content: '';
     position: absolute;
     background-image: url('../images/icons/home-icon.svg');
@@ -68,14 +68,14 @@ a {
     left: 0;
     top: 4px;
   }
-  &__list{
+  &__list {
     display: flex;
   }
-  &__item{
+  &__item {
     color: #727272;
     padding-right: 40px;
     position: relative;
-    &::after{
+    &::after {
       content: '';
       position: absolute;
       background-image: url('../images/icons/angle-right.svg');
@@ -84,15 +84,60 @@ a {
       right: 15px;
       top: 7px;
     }
-    &:last-child{
+    &:last-child {
       color: $accent;
       padding-right: 0;
-      &::after{
+      &::after {
         display: none;
       }
     }
   }
-  &__link{
+  &__link {
     color: inherit;
   }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+  ul.pagination__list {
+    display: flex;
+    padding: 0 35px;
+  }
+  &__item {
+    padding: 0 15px;
+  }
+  &__link--active{
+    color: $accent;
+    font-weight: 700;
+  }
+  &__arrow {
+    text-transform: uppercase;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 5px;
+      height: 10px;
+      top: 8px;
+      background-image: url(../images/icons/angle-left.svg);
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+  &__prev {
+    padding-left: 15px;
+    &::before {
+      left: 0;
+    }
+  }
+  &__next {
+    padding-right: 15px;
+    &::before {
+      transform: rotate(180deg);
+      right: 0;
+    }
+  }
+
 }
